@@ -6,18 +6,19 @@
 <title>About</title>
 <style>
   body {
-    font-family: Arial, sans-serif;
     height: 100%;
     width: 100%;
     margin: 0;
-    padding: 0;
-    background-image: url("portfolio.jpg"); /* Add your background image URL */
-    background-size: cover;
+    font-family: Arial, sans-serif;
+    background-image: url('portfolio.jpg');
     background-position: center;
-    color: #fff;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    color: white;
   }
   .bg-img {
-    height:100%;
+    height: 100%;
     width: 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -26,21 +27,19 @@
     color: white;
   }
   .navbar {
-    overflow: hidden;
-    position: static;
-    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: none;
+    padding: 10px 20px;
   }
   
   .navbar a {
-    float: left;
-    display: block;
-    color: white ;
+    color: white;
     text-align: center;
     padding: 14px 20px;
     text-decoration: none;
-    position: relative;
     font-size: 15px;
-    transition: background-color 0.1s; /* Add transition for smooth hover effect */
   }
   
   .navbar a:hover {
@@ -66,7 +65,7 @@
     text-align: center;
   }
   h2 {
-    color: #151514; /* Change the color to gold */
+    color: #36342e; /* Change the color to gold */
   }
   h3 {
     color: #ccc;
@@ -89,33 +88,31 @@
   .contact-info a:hover {
     text-decoration: underline;
   }
-  .logo img {
-    width: 40px;
+  .navbar .logo {
+    margin-right: 20px;
   }
-  .logo {
-    position: absolute;
-    top: 10px;
-    left: 10px;
+  .navbar .logo img {
+    width: 50px;
+    height: auto;
   }
-  .logo img {
-    width: 50px; 
-    height: auto; 
+  .navbar nav {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    gap: 20px;
   }
-    .navbar button {
-      float: right;
-      display: block;
-      border: none;
-      outline: none;
-      color: white;
-      padding: 14px 20px;
-      background-color: red;
-      text-align: center;
-      cursor: pointer;
-      border-radius: 50%;
-    }
-    .navbar button:hover {
-      background-color:black;
-    }
+  .navbar .resume-button {
+    padding: 14px 20px;
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    border-radius: 50%;
+  }
+  .navbar .resume-button:hover {
+    background-color: black;
+  }
   footer {
       color: #fff;
       text-align: center;
@@ -125,56 +122,59 @@
       width: 100%;
     }
     @media only screen and (max-width: 600px) {
-      .main-text {
-        left: 2%;
-        width: 65%;
-      }
-      .main-text h1 {
-        font-size: 24px;
-      }
-      .main-text p {
-        font-size: 14px;
-      }
       .navbar {
+        flex-direction: row;
+        align-items: flex-start;
         padding: 5px;
+      }
+      .navbar nav {
+        flex-direction: row;
+        width: 100%;
+        align-items: flex-start;
+        gap: 10px;
       }
       .navbar a {
         font-size: 12px;
-        padding: 8px;
+        padding: 6px;
       }
-      .main-text button {
-        font-size: 14px;
-        padding: 6px 16px;
-      }
+        .navbar .resume-button {
+          width: 100%;
+          text-align: center;
+          margin-top: 10px;
+        }
+      
       .logo img {
         width: 40px;
       }
-     footer {
-      color: #fff;
-      text-align: center;
-      padding: 10px 0;
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      
-    }
+      footer {
+        color: #111;
+        text-align: center;
+        padding: 10px 0;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+      }
     }
 </style>
 </head>
 <body>
   <div class="bg-img">
     <div class="navbar">
-      <a href="#home">Hom</a>
-      <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-      <a class="nav-link active" aria-current="page" href="about.html">About</a>
-      <a href="#services">Services</a>
-      <a href="#portfolio">Portfolio</a>
-      <a href="#blog">Blog</a>
-      <button id="resumeButton">RESUME</button> 
+      <div class="logo">
+        <img src="2.jpg" alt="Logo">
+      </div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#blog">Blog</a>
+      </nav>
+      <button class="resume-button" id="resumeButton">Resume</button>
     </div>
   </div>
-  <div class="logo">
-    <img src="2.jpg">
+  
+ 
 
 <div class="container">
   <h1>About</h1>
@@ -267,9 +267,6 @@
 <footer>
   &copy; 2024 Bandan Portfolio &#9829;
 </footer>
-<script>document.getElementById("resumeButton").addEventListener("click", function() {
-  window.location.href = "BandnaResume.pdf";
-});</script>
 
 
 </body>
