@@ -131,18 +131,17 @@
         flex-direction: row;
         width: 100%;
         align-items: flex-start;
-        gap: 10px;
+        gap: 8px;
       }
       .navbar a {
-        font-size: 12px;
-        padding: 6px;
+        font-size: 10px;
+        padding: 3px;
       }
         .navbar .resume-button {
-          width: 100%;
-          text-align: center;
-          margin-top: 10px;
+         display: none;
         }
       
+
       .logo img {
         width: 40px;
       }
@@ -154,6 +153,7 @@
         bottom: 0;
         width: 100%;
       }
+      
     }
 </style>
 </head>
@@ -166,9 +166,9 @@
       <nav>
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
-        <a href="#services">Services</a>
+        <a href="#services" class="s">Services</a>
         <a href="#portfolio">Portfolio</a>
-        <a href="#blog">Blog</a>
+        <a href="#blog" class="blog">Blog</a>
       </nav>
       <button class="resume-button" id="resumeButton">Resume</button>
     </div>
@@ -267,7 +267,10 @@
 <footer>
   &copy; 2024 Bandan Portfolio &#9829;
 </footer>
-
+<script>
+document.getElementById("blog").addEventListener("click", function() {
+  window.location.href = "BandnaResume.pdf";
+});</script>
 
 </body>
 </html>
